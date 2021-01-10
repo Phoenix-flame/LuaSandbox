@@ -31,7 +31,7 @@ int main(){
     };
 
     float speed_x = 2.0;
-    float speed_y = 2.0;
+    float speed_y = 1.0;
     float pos_x = 10.0;
     float pos_y = 10.0;
     
@@ -42,7 +42,7 @@ int main(){
 
     for (float dt = 0 ; dt < 20; dt += 0.1){
         lua_getglobal(L, "update");
-        lua_pushnumber(L, dt);
+        lua_pushnumber(L, 0.1);
         lua_pcall(L, 1, 2, 0);
         float ret1 = lua_tonumber(L, -2);
         float ret2 = lua_tonumber(L, -1);
